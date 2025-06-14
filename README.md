@@ -27,9 +27,14 @@ Key Learnings
 
 Ethical Hacking Techniques: Gained practical skills in ethical hacking, understanding both offensive and defensive strategies.
 
+
 Vulnerability Management: Learned how to identify, assess, and remediate vulnerabilities in various systems.
 Network Defense: Developed skills in securing networks against common threats and attacks.
 
 Acknowledgments
 
 I would like to thank CODTECH IT SOLUTIONS for the opportunity to participate in this internship and for providing guidance and support throughout the learning process.
+
+
+
+![image](https://github.com/user-attachments/assets/60968019-29e5-4754-aef6-9dab14275aa3)
