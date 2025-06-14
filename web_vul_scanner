@@ -1,0 +1,67 @@
+AUTHOR -> D NAGA VYSHNAV
+
+
+#!/usr/bin/env python3
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
+# Payloads
+xss_payload = "<script>alert('XSS')</script>"
+sql_payload = "' OR '1'='1"
+
+def is_vulnerable_to_xss(response):
+    return xss_payload in response.text
+
+def is_vulnerable_to_sql_injection(response):
+    errors = ["you have an error in your sql syntax", "warning: mysql", "unclosed quotation mark"]
+    return any(error.lower() in response.text.lower() for error in errors)
+
+def scan_forms(url):
+    print(f"\n🔍 Scanning Forms in {url}")
+    try:
+        response = requests.get(url, timeout=5)
+        soup = BeautifulSoup(response.text, "html.parser")
+        forms = soup.find_all("form")
+        for form in forms:
+            action = form.get("action")
+            method = form.get("method", "get").lower()
+            inputs = form.find_all("input")
+            form_url = urljoin(url, action)
+            data = {}
+
+            for input_field in inputs:
+                name = input_field.get("name")
+                if name:
+                    data[name] = xss_payload
+
+            print(f"[*] Testing XSS at: {form_url}")
+            if method == "post":
+                r = requests.post(form_url, data=data)
+            else:
+                r = requests.get(form_url, params=data)
+
+            if is_vulnerable_to_xss(r):
+                print("[!!] XSS Vulnerability Detected!")
+
+            # Test SQL Injection
+            for input_field in inputs:
+                name = input_field.get("name")
+                if name:
+                    data[name] = sql_payload
+
+            print(f"[*] Testing SQL Injection at: {form_url}")
+            if method == "post":
+                r = requests.post(form_url, data=data)
+            else:
+                r = requests.get(form_url, params=data)
+
+            if is_vulnerable_to_sql_injection(r):
+                print("[!!] SQL Injection Vulnerability Detected!")
+
+    except Exception as e:
+        print(f"[ERROR] {e}")
+
+# MAIN FUNCTION
+target = input("Enter target URL (e.g., http://testphp.vulnweb.com): ").strip()
+scan_forms(target)
