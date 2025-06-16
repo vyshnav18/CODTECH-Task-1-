@@ -42,3 +42,18 @@ I would like to thank CODTECH IT SOLUTIONS for the opportunity to participate in
 
 ![Screenshot 2025-06-14 094155](https://github.com/user-attachments/assets/169fc6cc-866e-42c1-8b2c-715dcddb89a5)
 
+
+![Port_Scanning](https://github.com/user-attachments/assets/df0ff2a4-8779-405c-b5fb-e9ff821fb300)
+
+
+![Brute_Force](https://github.com/user-attachments/assets/ad3cbf1e-88a3-4f9b-a327-14bc8213de36)
+
+
+![Host_discovery](https://github.com/user-attachments/assets/3deb57c6-1448-4ca6-be19-a588de3b44cf)
+
+
+![Service_Detection](https://github.com/user-attachments/assets/bd5f646f-8dec-4f27-87a2-7f355ae63dff)
+
+
+
+
