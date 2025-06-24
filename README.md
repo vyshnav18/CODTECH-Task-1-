@@ -1,5 +1,16 @@
 # CODTECH IT SOLUTIONS Ethical Hacking & Cyber Security Internship Tasks
 
+
+
+Name: D Naga Vyshnav
+Intern ID: CITSOD74
+Company: CodTech IT Solutions
+Domain: Cyber Security & Ethical Hacking
+Mentor: Neela Santosh
+Internship Duration: 6 Weeks
+
+
+
 Overview
 
 This repository contains the tasks and exercises completed during my Ethical Hacking & Cyber Security internship at CODTECH IT SOLUTIONS. The internship provided a practical understanding of cybersecurity concepts, focusing on ethical hacking, network security, and vulnerability assessment.
